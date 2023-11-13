@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perulangan</title>
+</head>
+<body>
+
+  <label for="jumlahPerulangan">Masukkan jumlah perulangan: </label>
+  <input type="number" id="jumlahPerulangan" min="1">
+  <button onclick="tampilkanKalimat()">Tampilkan</button>
+
+  <p id="outputKalimat"></p>
+
+  <script>
+    function tampilkanKalimat() {
+      let jumlahPerulangan = document.getElementById('jumlahPerulangan').value;
+
+      let outputElemen = document.getElementById('outputKalimat');
+
+      outputElemen.innerHTML = '';
+
+      for (let i = 0; i < jumlahPerulangan; i++) {
+        outputElemen.innerHTML += 'Saya adalah iblis kehancuran<br>';
+      }
+    }
+  </script>
+
+</body>
+</html>

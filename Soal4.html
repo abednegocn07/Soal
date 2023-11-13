@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Matematika</title>
+</head>
+<body>
+
+  <label for="angka1">Masukkan Angka 1: </label>
+  <input type="number" id="angka1">
+
+  <label for="angka2">Masukkan Angka 2: </label>
+  <input type="number" id="angka2">
+
+  <button onclick="hitung()">Hitung</button>
+
+  <p>Hasil:</p>
+  <ul id="hasilOperasi">
+    
+  </ul>
+
+  <script>
+    function hitung() {
+     
+      let angka1 = parseFloat(document.getElementById('angka1').value);
+      let angka2 = parseFloat(document.getElementById('angka2').value);
+
+     
+      if (isNaN(angka1) || isNaN(angka2)) {
+        alert('Masukkan angka yang valid.');
+        return;
+      }
+
+     
+      let hasilPenjumlahan = angka1 + angka2;
+      let hasilPengurangan = angka1 - angka2;
+      let hasilPerkalian = angka1 * angka2;
+      let hasilPembagian = angka1 / angka2;
+
+      
+      let bilanganTerbesar = angka1 > angka2 ? angka1 : angka2;
+
+      
+      let hasilElemen = document.getElementById('hasilOperasi');
+      hasilElemen.innerHTML = `
+        <li>Penjumlahan: ${hasilPenjumlahan}</li>
+        <li>Pengurangan: ${hasilPengurangan}</li>
+        <li>Perkalian: ${hasilPerkalian}</li>
+        <li>Pembagian: ${hasilPembagian}</li>
+        <li>Bilangan Terbesar: ${bilanganTerbesar}</li>
+      `;
+    }
+  </script>
+
+</body>
+</html>
